@@ -34,6 +34,11 @@
       <%= image_tag("logo.png") %>
       <%= @page_title || "Pragmatic Bookshelf" %>
     </div>
+    <% flash.each do |key, value| %>
+      <div class="<%= flash_class(key.to_sym) %>">
+        <%= value %>
+      </div>
+    <% end %>
     <%= yield %>
   </div>
 </body>

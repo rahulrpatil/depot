@@ -1,7 +1,5 @@
 <div class="col-xs-12 col-md-10">
-<% if notice %>
-<p id="notice"><%= notice %></p>
-<% end %>
+
 <h1>Your Pragmatic Catalog</h1>
 <table class="table table-condensed">
   <% cache ['store', Product.latest] do %>
