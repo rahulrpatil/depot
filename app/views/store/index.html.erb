@@ -1,0 +1,21 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<h1>Your Pragmatic Catalog</h1>
+<table class="table table-condensed">
+  <% cache ['store', Product.latest] do %>
+    <% @products.each do |product| %>
+      <% cache ['entry', product] do %>
+        <div class="entry">
+        <tr class="<%= cycle("success", "active") %>">
+            <td><%= image_tag(product.image_url, size: "80x80") %></td>
+            <td>
+              <h4><%= product.title %></h4>
+              <%= sanitize(product.description) %>
+              <%= number_to_currency(product.price) %></td>
+        </tr>
+        </div>
+      <% end %>
+    <%end%>
+  <%end%>
+</table>
