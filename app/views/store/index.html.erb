@@ -1,3 +1,4 @@
+<div class="col-xs-12 col-md-10">
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
@@ -12,10 +13,12 @@
             <td>
               <h4><%= product.title %></h4>
               <%= sanitize(product.description) %>
-              <%= number_to_currency(product.price) %></td>
+              <%= number_to_currency(product.price) %>
+              <%= button_to 'Add to Cart', line_items_path(product_id: product) %></td>
         </tr>
         </div>
       <% end %>
     <%end%>
   <%end%>
 </table>
+</div>
