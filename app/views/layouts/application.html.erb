@@ -40,6 +40,11 @@
       </div>
     <% end %>
     <%= yield %>
+    <% if @cart %>
+      <div id="carts" class="col-md-2">
+        <%= render @cart %>
+      </div>
+    <%end%>  
   </div>
 </body>
 </html>
